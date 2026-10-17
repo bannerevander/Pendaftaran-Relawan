@@ -1,0 +1,78 @@
+/* =========================================================
+   animation.css — Semua animasi (motion) dipisah di sini
+   Kelas yang bisa dipakai di HTML:
+   .anim-muncul      → muncul dari bawah saat halaman dibuka
+   .delay-1/2/3      → jeda agar elemen muncul bergantian
+   .anim-denyut      → titik berdenyut (lencana siaga)
+   .anim-getar       → getar, dipasang script.js saat validasi gagal
+   ========================================================= */
+
+/* ---------- Keyframes ---------- */
+@keyframes muncul {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes denyut {
+  0%   { box-shadow: 0 0 0 0 rgba(247, 127, 0, 0.7); }
+  100% { box-shadow: 0 0 0 10px rgba(247, 127, 0, 0); }
+}
+
+@keyframes getar {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-6px); }
+  75%      { transform: translateX(6px); }
+}
+
+/* ---------- Kelas animasi ---------- */
+.anim-muncul {
+  animation: muncul 0.7s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+.anim-denyut {
+  animation: denyut 1.5s ease-out infinite;
+}
+
+.anim-getar {
+  animation: getar 0.3s ease-in-out 2;
+}
+
+/* ---------- Efek hover (transisi halus) ---------- */
+.btn {
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Baris tabel sedikit bergeser saat disorot */
+.tabel-divisi tbody tr {
+  transition: background-color 0.2s;
+}
+
+.tabel-divisi tbody tr:hover {
+  background-color: #ffe2bf;
+}
+
+/* Kartu statistik naik sedikit saat disorot */
+.statistik li {
+  transition: transform 0.2s;
+}
+
+.statistik li:hover {
+  transform: translateY(-4px);
+}
+
+/* Matikan animasi bagi pengguna yang memilih "kurangi gerakan" */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

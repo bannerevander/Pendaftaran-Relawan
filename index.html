@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RelawanKita · Daftar Relawan Bencana</title>
+
+  <!-- Font: Poppins untuk judul, Inter untuk teks biasa -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- style.css = tampilan, animation.css = khusus animasi (motion) -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <!-- .wadah = pembungkus selebar 1120px agar semua bagian sejajar -->
+  <nav class="navbar">
+    <div class="wadah navbar-isi">
+      <a href="#" class="logo">Relawan<span>Kita</span></a>
+      <div class="nav-link">
+        <a href="#info-divisi">Divisi</a>
+        <a href="#daftar" class="nav-btn">Daftar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <div class="wadah hero-grid">
+
+      <!-- Kiri: ajakan utama -->
+      <div class="hero-teks">
+        <span class="status anim-muncul">
+          <i class="titik anim-denyut"></i> Siaga Bencana · Rekrutmen Dibuka
+        </span>
+        <h1 class="anim-muncul delay-1">Satu tangan membantu, banyak tangan memulihkan.</h1>
+        <p class="anim-muncul delay-2">
+          Bergabunglah sebagai relawan tanggap bencana alam. Pilih divisi yang
+          sesuai keahlianmu dan bantu warga terdampak bangkit kembali.
+        </p>
+        <div class="hero-tombol anim-muncul delay-3">
+          <a href="#daftar" class="btn">Daftar Sekarang</a>
+          <a href="#info-divisi" class="btn btn-garis">Lihat Divisi</a>
+        </div>
+      </div>
+
+      <!-- Kanan: langkah bergabung -->
+      <div class="hero-kartu anim-muncul delay-2">
+        <h3>Cara Bergabung</h3>
+        <ol class="langkah">
+          <li><span><b>Pilih divisi</b> sesuai keahlian dan kuota yang tersedia.</span></li>
+          <li><span><b>Isi formulir</b> nama, jurusan, dan divisi pilihan.</span></li>
+          <li><span><b>Ikuti pembekalan</b> sebelum diterjunkan ke posko.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Angka ringkas, tetap di dalam hero agar tidak terpotong -->
+    <ul class="wadah statistik anim-muncul delay-3">
+      <li><b>36</b><span>Relawan dibutuhkan</span></li>
+      <li><b>4</b><span>Divisi tugas</span></li>
+      <li><b>24/7</b><span>Posko siaga</span></li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- ===================== TABEL DIVISI ===================== -->
+    <!-- Warna baris selang-seling diatur di style.css (tr:nth-child) -->
+    <section id="info-divisi" class="bagian">
+      <div class="wadah">
+        <div class="judul-bagian">
+          <p class="kecil">Kebutuhan Relawan</p>
+          <h2>Divisi yang Dibutuhkan</h2>
+          <p>Setiap divisi punya tugas dan kuota berbeda. Pilih yang paling sesuai denganmu.</p>
+        </div>
+
+        <div class="tabel-wadah">
+          <table class="tabel-divisi">
+            <thead>
+              <tr>
+                <th>Divisi</th>
+                <th>Tugas Utama</th>
+                <th>Kuota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag">Medis</span></td>
+                <td>Pertolongan pertama</td>
+                <td>10 orang</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Dapur Umum</span></td>
+                <td>Memasak &amp; distribusi makanan</td>
+                <td>8 orang</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Logistik</span></td>
+                <td>Bongkar muat &amp; gudang</td>
+                <td>12 orang</td>
+              </tr>
+              <tr>
+                <td><span class="tag">Pendataan</span></td>
+                <td>Data pengungsi</td>
+                <td>6 orang</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORM PENDAFTARAN ===================== -->
+    <section id="daftar" class="bagian bagian-putih">
+      <div class="wadah daftar">
+
+        <!-- Kiri: info & ketentuan -->
+        <div class="daftar-info">
+          <p class="kecil">Formulir</p>
+          <h2>Daftar Jadi Relawan</h2>
+          <p>Isi data di samping. Tim kami akan menghubungimu untuk jadwal pembekalan.</p>
+
+          <ul class="syarat">
+            <li>Divisi <b>Medis</b> khusus jurusan kesehatan (Kedokteran, Keperawatan, Farmasi, Kesehatan Masyarakat, dll).</li>
+            <li>Divisi lain terbuka untuk semua jurusan.</li>
+            <li>Bersedia ditempatkan di posko sesuai jadwal.</li>
+          </ul>
+        </div>
+
+        <!-- Kanan: form. Validasi Medis vs jurusan ada di script.js -->
+        <form id="formRelawan" class="form">
+          <label for="nama">Nama Lengkap <span class="wajib">*</span></label>
+          <input type="text" id="nama" placeholder="contoh: Salsa Amelia" autocomplete="name" required>
+
+          <label for="jurusan">Jurusan <span class="wajib">*</span></label>
+          <input type="text" id="jurusan" placeholder="contoh: Keperawatan" required>
+
+          <label for="divisi">Pilihan Divisi <span class="wajib">*</span></label>
+          <select id="divisi" required>
+            <option value="">-- Pilih divisi --</option>
+            <option value="Medis">Medis</option>
+            <option value="Dapur Umum">Dapur Umum</option>
+            <option value="Logistik">Logistik</option>
+            <option value="Pendataan">Pendataan</option>
+          </select>
+
+          <!-- Pesan error / sukses ditulis oleh script.js -->
+          <p id="pesan" class="pesan" aria-live="polite"></p>
+
+          <button type="submit" class="btn btn-penuh">Kirim Pendaftaran</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wadah">
+      <b>RelawanKita</b> · Bergerak bersama untuk sesama
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
